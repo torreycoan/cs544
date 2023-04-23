@@ -1,0 +1,10 @@
+start listening on port 5444
+E0225 03:43:35.431381994   17153 chttp2_server.cc:1045]                UNKNOWN:No address added out of total 1 resolved for 'localhost:5444' {created_time:"2023-02-25T03:43:35.431305785+00:00", children:[UNKNOWN:Unable to configure socket {fd:5, created_time:"2023-02-25T03:43:35.431262035+00:00", children:[UNKNOWN:Address already in use {created_time:"2023-02-25T03:43:35.43121686+00:00", errno:98, os_error:"Address already in use", syscall:"bind"}]}]}
+Traceback (most recent call last):
+  File "/home/tcoan/lec/server.py", line 17, in <module>
+    server.add_insecure_port('localhost:5444')
+  File "/home/tcoan/.local/lib/python3.10/site-packages/grpc/_server.py", line 970, in add_insecure_port
+    return _common.validate_port_binding_result(
+  File "/home/tcoan/.local/lib/python3.10/site-packages/grpc/_common.py", line 175, in validate_port_binding_result
+    raise RuntimeError(_ERROR_MESSAGE_PORT_BINDING_FAILED % address)
+RuntimeError: Failed to bind to address localhost:5444; set GRPC_VERBOSITY=debug environment variable to see detailed error message.
